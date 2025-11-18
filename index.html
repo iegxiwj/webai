@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="cs" x-data="{ activeSection: 'nintendo' }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vývoj konzolí | Interaktivní časová osa</title>
+    <meta name="description" content="Interaktivní časová osa výrobců herních konzolí">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="syly.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-gamepad text-2xl mr-3"></i>
+                    <h1 class="text-xl font-bold">Vývoj konzolí</h1>
+                </div>
+                <div class="flex space-x-4" id="nav-dots">
+                    <!-- Navigační tečky budou vloženy zde pomocí JavaScriptu -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative">
+        <!-- Vertical Timeline -->
+        <div class="container mx-auto px-4 py-12">
+            <!-- Nintendo -->
+            <section id="nintendo" class="timeline-item mb-24 py-8 px-6 bg-white rounded-lg shadow-md" 
+                     x-intersect:enter="activeSection = 'nintendo'">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                        <img src="https://www.nintendo.com/content/dam/noa/en_US/images/switch/oled-model/switch-oled-model-overview-hero.jpg" 
+                             alt="Nintendo Switch OLED" 
+                             class="w-full rounded-lg shadow-md">
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Založeno: 1889</span>
+                            <span class="text-sm text-gray-500">Japonsko</span>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h2 class="text-3xl font-bold text-blue-600 mb-4">Nintendo</h2>
+                        <p class="text-gray-700 mb-6">
+                            Nintendo začalo jako výrobce hracích karet v roce 1889 a do světa videoher vstoupilo v 70. letech.
+                            Revolucionalizovalo domácí hraní s NESem v roce 1983 po krachu videoherního trhu a položilo
+                            základy mnoha standardů, které se používají dodnes.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Významné konzole</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>NES (1983)</li>
+                                    <li>SNES (1990)</li>
+                                    <li>Nintendo 64 (1996)</li>
+                                    <li>Switch (2017)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Klíčové inovace</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>D-pad (křížový ovladač)</li>
+                                    <li>Přenosné hraní (Game Boy)</li>
+                                    <li>Pohybové ovládání (Wii)</li>
+                                    <li>Hybridní konzole (Switch)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="nintendo.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition">
+                            Zobrazit celou historii →
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sony -->
+            <section id="sony" class="timeline-item mb-24 py-8 px-6 bg-white rounded-lg shadow-md" 
+                     x-intersect:enter="activeSection = 'sony'">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                        <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$" 
+                             alt="Konzole PlayStation 5" 
+                             class="w-full rounded-lg shadow-md">
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Vstup do herního průmyslu: 1994</span>
+                            <span class="text-sm text-gray-500">Japonsko</span>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h2 class="text-3xl font-bold text-blue-600 mb-4">Sony PlayStation</h2>
+                        <p class="text-gray-700 mb-6">
+                            Sony vstoupilo na herní trh v roce 1994 po nevydařené spolupráci s Nintendo.
+                            Původní PlayStation popularizoval CD-ROM jako médium pro hry a vybudoval z Sony
+                            klíčového hráče v odvětví, čímž vznikla značka PlayStation, jak ji známe dnes.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Významné konzole</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>PlayStation (1994)</li>
+                                    <li>PS2 (2000)</li>
+                                    <li>PSP (2004)</li>
+                                    <li>PS5 (2020)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Klíčové inovace</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Hry na CD</li>
+                                    <li>Dvojitý analogový ovladač</li>
+                                    <li>Blu-ray jako médium</li>
+                                    <li>Virtuální realita (PSVR)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="sony.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition">
+                            Zobrazit celou historii →
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Microsoft -->
+            <section id="microsoft" class="timeline-item mb-24 py-8 px-6 bg-white rounded-lg shadow-md" 
+                     x-intersect:enter="activeSection = 'microsoft'">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                        <img src="https://compass-ssl.xbox.com/assets/b9/0a/b90ad58f-9950-44a7-87fa-1ee8f0b6a90e.jpg?n=XSX_Page-Hero-0_768x792.jpg" 
+                             alt="Konzole Xbox Series X" 
+                             class="w-full rounded-lg shadow-md">
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Vstup do herního průmyslu: 2001</span>
+                            <span class="text-sm text-gray-500">USA</span>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h2 class="text-3xl font-bold text-blue-600 mb-4">Microsoft Xbox</h2>
+                        <p class="text-gray-700 mb-6">
+                            Microsoft vstoupil na trh konzolí v roce 2001 s originálním Xboxem a zahájil soutěž se Sony.
+                            Xbox 360 upevnil jejich pozici a služba Xbox Live přinesla revoluci v online hraní na konzolích.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Významné konzole</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Xbox (2001)</li>
+                                    <li>Xbox 360 (2005)</li>
+                                    <li>Xbox One (2013)</li>
+                                    <li>Series X (2020)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Klíčové inovace</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Vestavěný pevný disk</li>
+                                    <li>Online služba Xbox Live</li>
+                                    <li>Kinect (pohybové ovládání)</li>
+                                    <li>Předplatné Game Pass</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="microsoft.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition">
+                            Zobrazit celou historii →
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sega -->
+            <section id="sega" class="timeline-item mb-24 py-8 px-6 bg-white rounded-lg shadow-md" 
+                     x-intersect:enter="activeSection = 'sega'">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Sega-Genesis-Mod1-Set.jpg/800px-Sega-Genesis-Mod1-Set.jpg" 
+                             alt="Konzole Sega Genesis" 
+                             class="w-full rounded-lg shadow-md">
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1960–2001</span>
+                            <span class="text-sm text-gray-500">Japonsko</span>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h2 class="text-3xl font-bold text-blue-600 mb-4">Sega</h2>
+                        <p class="text-gray-700 mb-6">
+                            Sega byla hlavním konkurentem Nintenda v 16bitové éře s konzolí Genesis/Mega Drive.
+                            Díky arkádovým kořenům a výraznému marketingu Sega později opustila výrobu hardwaru po Dreamcastu,
+                            ale i nadále působí jako významný vydavatel her.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Významné konzole</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Master System (1985)</li>
+                                    <li>Genesis (1988)</li>
+                                    <li>Saturn (1994)</li>
+                                    <li>Dreamcast (1998)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Klíčové inovace</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Marketing "Blast Processing"</li>
+                                    <li>První konzole s modemem</li>
+                                    <li>Analogový ovladač (Dreamcast)</li>
+                                    <li>Sonic the Hedgehog</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="sega.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition">
+                            Zobrazit celou historii →
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Atari -->
+            <section id="atari" class="timeline-item mb-24 py-8 px-6 bg-white rounded-lg shadow-md" 
+                     x-intersect:enter="activeSection = 'atari'">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Atari-2600-Wood-4Sw-Set.jpg/800px-Atari-2600-Wood-4Sw-Set.jpg" 
+                             alt="Konzole Atari 2600" 
+                             class="w-full rounded-lg shadow-md">
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1972–současnost</span>
+                            <span class="text-sm text-gray-500">USA</span>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h2 class="text-3xl font-bold text-blue-600 mb-4">Atari</h2>
+                        <p class="text-gray-700 mb-6">
+                            Atari bylo průkopníkem domácího videoherního průmyslu s Pongem a Atari 2600.
+                            Jejich úspěch koncem 70. let pomohl vytvořit odvětví videoher, avšak problémy s kvalitou
+                            přispěly ke krachu v roce 1983. Značka se od té doby několikrát změnila.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Významné konzole</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Pong (1975)</li>
+                                    <li>2600 (1977)</li>
+                                    <li>5200 (1982)</li>
+                                    <li>Jaguar (1993)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h3 class="font-bold text-blue-600 mb-2">Klíčové inovace</h3>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>První úspěšná domácí konzole</li>
+                                    <li>Hry na kazetách (cartridge)</li>
+                                    <li>Převody arkádových her na domácí platformy</li>
+                                    <li>Průkopník třetích stran ve vývoji</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="atari.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition">
+                            Zobrazit celou historii →
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">Vývoj konzolí</h3>
+                    <p class="text-gray-400">Interaktivní časová osa výrobců herního hardwaru</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
+                </div>
+            </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Vývoj konzolí. Vzdělávací zdroj.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create navigation dots
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = ['nintendo', 'sony', 'microsoft', 'sega', 'atari'];
+            const navDots = document.getElementById('nav-dots');
+            
+            sections.forEach(section => {
+                const dot = document.createElement('a');
+                dot.href = `#${section}`;
+                dot.className = 'nav-dot bg-gray-300 rounded-full';
+                dot.setAttribute('x-bind:class', `activeSection === '${section}' ? 'active' : ''`);
+                navDots.appendChild(dot);
+            });
+
+            // Highlight active section
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        history.replaceState(null, null, `#${sectionId}`);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.timeline-item').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
